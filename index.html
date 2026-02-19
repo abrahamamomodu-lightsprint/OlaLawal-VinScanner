@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0f1f" />
+  <title>Olalawal AutoVin — VIN Intelligence Platform</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home">Olalawal <span>AutoVin</span></a>
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryNav">☰</button>
+      <nav id="primaryNav" class="primary-nav" aria-label="Primary">
+        <a href="#marketplace">Marketplace</a>
+        <a href="#vin">VIN Decoder</a>
+        <a href="#assistant">Smart Buyer</a>
+        <a href="#vdp">VDP Intelligence</a>
+        <a href="#apex">Apex</a>
+        <a href="#seller">Seller Dashboard</a>
+        <a href="#trust">Trust & Safety</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero container">
+      <div>
+        <p class="eyebrow">Mobile-first VIN & buyer intelligence</p>
+        <h1>Find the right car with verified VIN truth.</h1>
+        <p>Decode VINs, estimate costs, and navigate every listing with AI-guided confidence.</p>
+        <a href="#vin" class="btn btn-primary">Decode VIN now</a>
+      </div>
+      <div class="panel apex-panel">
+        <h2>Apex Performance Experience</h2>
+        <ul>
+          <li>Dark-mode cockpit visuals</li>
+          <li>Fast module switching</li>
+          <li>Live trust flags + deal scoring</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="marketplace" class="section container">
+      <h2>Marketplace Discovery</h2>
+      <div class="grid cards">
+        <article class="panel"><h3>Regional Listings Map</h3><p>Filter by make, body type, and verified title status.</p></article>
+        <article class="panel"><h3>Price Signal Radar</h3><p>Compare asking price to local market norms instantly.</p></article>
+        <article class="panel"><h3>Condition Snapshots</h3><p>See likely wear profile from mileage + usage patterns.</p></article>
+      </div>
+    </section>
+
+    <section id="vin" class="section container">
+      <h2>Homepage VIN Decoder</h2>
+      <p>Enter a 17-character VIN to decode and inspect accident/body clues.</p>
+      <div class="panel vin-tool">
+        <label for="vinInput">VIN</label>
+        <div class="inline">
+          <input id="vinInput" maxlength="17" placeholder="e.g., 1HGCM82633A004352" />
+          <button id="ocrFill" class="btn">OCR Demo Fill</button>
+          <button id="decodeBtn" class="btn btn-primary">Decode</button>
+        </div>
+        <p id="vinState" class="status">Awaiting VIN input.</p>
+        <pre id="vinTruth" class="truth"></pre>
+      </div>
+    </section>
+
+    <section id="assistant" class="section container">
+      <h2>Smart Buyer Assistant</h2>
+      <div class="grid two-col">
+        <article class="panel">
+          <h3>Help-me-choose quiz</h3>
+          <form id="quizForm" class="stack">
+            <label>Primary use
+              <select name="use"><option value="city">City commute</option><option value="family">Family use</option><option value="adventure">Adventure</option></select>
+            </label>
+            <label>Budget range
+              <select name="budget"><option value="low">Under $15k</option><option value="mid">$15k-$35k</option><option value="high">$35k+</option></select>
+            </label>
+            <label>Fuel preference
+              <select name="fuel"><option value="economy">Maximum economy</option><option value="balanced">Balanced</option><option value="power">Performance</option></select>
+            </label>
+            <button class="btn btn-primary" type="submit">Get recommendation</button>
+          </form>
+          <p id="quizResult" class="status"></p>
+        </article>
+
+        <article class="panel">
+          <h3>Pricing utilities</h3>
+          <div class="stack">
+            <label>Miles per year <input id="miles" type="number" value="12000" /></label>
+            <label>Fuel price ($/gal) <input id="fuelPrice" type="number" step="0.01" value="3.90" /></label>
+            <label>Vehicle MPG <input id="mpg" type="number" value="28" /></label>
+            <label>Vehicle price ($) <input id="price" type="number" value="18500" /></label>
+            <label>Tax rate (%) <input id="tax" type="number" step="0.1" value="7.5" /></label>
+            <label>Fees ($) <input id="fees" type="number" value="640" /></label>
+            <button id="calcBtn" class="btn">Calculate</button>
+          </div>
+          <p id="calcOut" class="status"></p>
+        </article>
+      </div>
+      <article class="panel">
+        <h3>Jargon buster</h3>
+        <p>Hover terms: <span class="term" data-tip="Front suspension and steering geometry alignment.">Alignment</span>, <span class="term" data-tip="Mileage represented by seller as accurate.">TMU</span>, <span class="term" data-tip="Monroney label listing original features and MSRP.">Window sticker</span>.</p>
+        <p id="tooltip" class="status">Tip: hover a term to learn more.</p>
+      </article>
+    </section>
+
+    <section id="vdp" class="section container"><h2>VDP Intelligence Modules</h2><div class="grid cards"><article class="panel">Photo consistency scanner</article><article class="panel">Spec mismatch detector</article><article class="panel">Dealer response sentiment</article></div></section>
+    <section id="apex" class="section container"><h2>Apex Experience</h2><p class="panel">Adaptive dark mode and dense information layout for power buyers.</p></section>
+    <section id="seller" class="section container"><h2>Seller Dashboard</h2><div class="grid cards"><article class="panel">VIN health summary</article><article class="panel">Lead quality score</article><article class="panel">Listing trust badge</article></div></section>
+    <section id="trust" class="section container"><h2>Trust & Safety</h2><div class="grid cards"><article class="panel">Title anomaly checks</article><article class="panel">Accident signal monitor</article><article class="panel">Odometer tamper heuristics</article></div></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

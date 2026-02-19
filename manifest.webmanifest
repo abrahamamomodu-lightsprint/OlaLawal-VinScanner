@@ -1,0 +1,10 @@
+{
+  "name": "Olalawal AutoVin",
+  "short_name": "AutoVin",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0a0f1f",
+  "theme_color": "#0a0f1f",
+  "description": "VIN verification and smart buyer assistant for auto marketplace decisions.",
+  "icons": []
+}
